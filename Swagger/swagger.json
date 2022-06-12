@@ -1,0 +1,628 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ShopMart2",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url":"http://localhost:3000/api",
+      "schemes": ["http","https"],
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/product/post": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "post",
+        "operationId": "post",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "shopName",
+                  "price",
+                  "offerPrice",
+                  "discount",
+                  "productName",
+                  "rating",
+                  "category",
+                  "productImage"
+                ],
+                "type": "object",
+                "properties": {
+                  "shopName": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 2
+                  },
+                  "price": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1523
+                  },
+                  "offerPrice": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1420
+                  },
+                  "discount": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 15
+                  },
+                  "productName": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  },
+                  "rating": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 45
+                  },
+                  "category": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  },
+                  "productImage": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/product/get": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "get",
+        "operationId": "get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/product/delete": {
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "delete",
+        "operationId": "delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "62a181d32c73f17da0077182"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "getById",
+        "operationId": "getById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/product/update": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "update",
+        "operationId": "update",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "shopName",
+                  "price",
+                  "offerPrice",
+                  "discount",
+                  "productName",
+                  "rating",
+                  "category",
+                  "productImage",
+                  "id"
+                ],
+                "type": "object",
+                "properties": {
+                  "shopName": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 3
+                  },
+                  "price": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 15230
+                  },
+                  "offerPrice": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 14200
+                  },
+                  "discount": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 15
+                  },
+                  "productName": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  },
+                  "rating": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 45
+                  },
+                  "category": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  },
+                  "productImage": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string",
+                    "example": "62a32cace6f740f21933df77"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Register",
+        "operationId": "Register",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              },
+              "example": {
+                "userName": "hdtfhgbk",
+                "email": "rudanisunny01@gmail.com",
+                "mobile": 1234567890,
+                "password": "12345678",
+                "confirmPassword": "12345678"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/get": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "get",
+        "operationId": "Getget",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/activateuser": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Activate User",
+        "operationId": "ActivateUser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivateUserRequest"
+              },
+              "example": {
+                "email": "rudanisunny01@gmail.com",
+                "accountActivationCode": "411705"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/forgetpassword": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Forget Password",
+        "operationId": "ForgetPassword",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgetPasswordRequest"
+              },
+              "example": {
+                "email": "rudanisunny01@gmail.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/verifyOtpCode": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Verify OTP Code",
+        "operationId": "VerifyOTPCode",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOTPCodeRequest"
+              },
+              "example": {
+                "email": "rudanisunny01@gmail.com",
+                "otpCode": 305997,
+                "newPassword": "87654321",
+                "confirmPassword": "87654321"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/changePassword": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Change Password",
+        "operationId": "ChangePassword",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordRequest"
+              },
+              "example": {
+                "email": "rudanisunny01@gmail.com",
+                "oldPassword": "87654321",
+                "newPassword": "12345678",
+                "confirmPassword": "12345678"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Login",
+        "operationId": "Login",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              },
+              "example": {
+                "email": "rudanisunny01@gmail.com",
+                "mobile": "",
+                "password": "12345678"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RegisterRequest": {
+        "title": "RegisterRequest",
+        "required": [
+          "userName",
+          "email",
+          "mobile",
+          "password",
+          "confirmPassword"
+        ],
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "mobile": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "password": {
+            "type": "string"
+          },
+          "confirmPassword": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "userName": "hdtfhgbk",
+          "email": "rudanisunny01@gmail.com",
+          "mobile": 1234567890,
+          "password": "12345678",
+          "confirmPassword": "12345678"
+        }
+      },
+      "ActivateUserRequest": {
+        "title": "ActivateUserRequest",
+        "required": [
+          "email",
+          "accountActivationCode"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "accountActivationCode": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "rudanisunny01@gmail.com",
+          "accountActivationCode": "411705"
+        }
+      },
+      "ForgetPasswordRequest": {
+        "title": "ForgetPasswordRequest",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "rudanisunny01@gmail.com"
+        }
+      },
+      "VerifyOTPCodeRequest": {
+        "title": "VerifyOTPCodeRequest",
+        "required": [
+          "email",
+          "otpCode",
+          "newPassword",
+          "confirmPassword"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "otpCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newPassword": {
+            "type": "string"
+          },
+          "confirmPassword": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "rudanisunny01@gmail.com",
+          "otpCode": 305997,
+          "newPassword": "87654321",
+          "confirmPassword": "87654321"
+        }
+      },
+      "ChangePasswordRequest": {
+        "title": "ChangePasswordRequest",
+        "required": [
+          "email",
+          "oldPassword",
+          "newPassword",
+          "confirmPassword"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "oldPassword": {
+            "type": "string"
+          },
+          "newPassword": {
+            "type": "string"
+          },
+          "confirmPassword": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "rudanisunny01@gmail.com",
+          "oldPassword": "87654321",
+          "newPassword": "12345678",
+          "confirmPassword": "12345678"
+        }
+      },
+      "LoginRequest": {
+        "title": "LoginRequest",
+        "required": [
+          "email",
+          "mobile",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "mobile": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "rudanisunny01@gmail.com",
+          "mobile": "",
+          "password": "12345678"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Product"
+    },
+    {
+      "name": "User"
+    }
+  ]
+}
